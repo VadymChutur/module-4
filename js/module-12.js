@@ -25,13 +25,294 @@ const user = {
 
 // console.log(_.range(1, 10, 2));
 
-const players = [
-  { id: 'id-1', tag: 'Mango', isOnline: true, rank: 800 },
-  { id: 'id-2', tag: 'Poly', isOnline: false, rank: 600 },
-  { id: 'id-3', tag: 'Ajax', isOnline: true, rank: 100 },
-  { id: 'id-4', tag: 'Kiwi', isOnline: true, rank: 400 },
+// const players = [
+//   { id: 'id-1', tag: 'Mango', isOnline: true, rank: 800 },
+//   { id: 'id-2', tag: 'Poly', isOnline: false, rank: 600 },
+//   { id: 'id-3', tag: 'Ajax', isOnline: true, rank: 100 },
+//   { id: 'id-4', tag: 'Kiwi', isOnline: true, rank: 400 },
+// ];
+
+// const sortBy = _.sortBy(players, ['rank', 'isOnline']);
+
+// console.table(sortBy);
+
+// function deliverPizza(pizzaName) {
+//   return `Delivering ${pizzaName} pizza.`;
+// }
+
+// function makePizza(pizzaName) {
+//   return `Pizza ${pizzaName} is being prepared, please wait...`;
+// }
+
+// // Chande code below this line
+// function makeMessage(pizzaName, callback) {
+//   return callback(pizzaName);
+// }
+
+// console.log(makeMessage('Royal Grand', makePizza));
+// console.log(makeMessage('Ultracheese', deliverPizza));
+
+// function makePizza(pizzaName, callback) {
+//   console.log(`Pizza ${pizzaName} is being prepared, please wait...`);
+//   callback(pizzaName);
+// }
+
+// makePizza('Royal Grand', function deliverPizza(pizzaName) {
+//   console.log(`Delivering pizza ${pizzaName}.`);
+// });
+// // Change code below this line
+
+// makePizza('Ultracheese', (eatPizza) => console.log(`Eating pizza ${eatPizza}`));
+
+// const pizzaPalace = {
+//   pizzas: ['Ultracheese', 'Smoked', 'Four meats'],
+//   order(pizzaName, onSuccess, onError) {
+//     return this.pizzas.includes(pizzaName)
+//       ? onSuccess(pizzaName)
+//       : onError(pizzaName);
+//   },
+// };
+// // Change code above this line
+
+// // Callback for onSuccess
+// function makePizza(pizzaName) {
+//   return `Your order is accepted. Cooking pizza ${pizzaName}.`;
+// }
+
+// // Callback for onError
+// function onOrderError(error) {
+//   return `There is no pizza with a name ${error} in the assortment.`;
+// }
+
+// // Method calls with callbacks
+// console.log(pizzaPalace.order('Smoked', makePizza, onOrderError));
+// console.log(pizzaPalace.order('Four meats', makePizza, onOrderError));
+// console.log(pizzaPalace.order('Big Mike', makePizza, onOrderError));
+// console.log(pizzaPalace.order('Vienna', makePizza, onOrderError));
+
+// function calculateTotalPrice(orderedItems) {
+//   let totalPrice = 0;
+//   // Change code below this line
+
+//   // for (let i = 0; i < orderedItems.length; i += 1) {
+//   //   totalPrice += orderedItems[i];
+//   // }
+
+//   orderedItems.forEach((element) => {
+//     totalPrice += element;
+//   });
+//   // Change code above this line
+//   return totalPrice;
+// }
+
+// console.log(calculateTotalPrice([12, 85, 37, 4]));
+
+// function filterArray(numbers, value) {
+//   const filteredNumbers = [];
+//   // Change code below this line
+
+//   // for (let i = 0; i < numbers.length; i += 1) {
+//   //   if (numbers[i] > value) {
+//   //     filteredNumbers.push(numbers[i]);
+//   //   }
+//   // }
+
+//   numbers.forEach((element) => {
+//     if (element > value) {
+//       filteredNumbers.push(element);
+//     }
+//   });
+
+//   // Change code above this line
+//   return filteredNumbers;
+// }
+
+// console.log(filterArray([1, 2, 3, 4, 5], 3));
+
+// function getCommonElements(firstArray, secondArray) {
+//   const commonElements = [];
+//   // Change code below this line
+
+//   // for (let i = 0; i < firstArray.length; i += 1) {
+//   //   if (secondArray.includes(firstArray[i])) {
+//   //     commonElements.push(firstArray[i]);
+//   //   }
+//   // }
+
+//   firstArray.forEach((element) => {
+//     if (secondArray.includes(element)) {
+//       commonElements.push(element);
+//     }
+//   });
+
+//   return commonElements;
+//   // Change code above this line
+// }
+
+// console.log(getCommonElements([1, 2, 3], [2, 1, 17, 19]));
+
+// Change code below this line
+// function calculateTotalPrice(orderedItems) {
+//   let totalPrice = 0;
+
+//   orderedItems.forEach(function (item) {
+//     totalPrice += item;
+//   });
+
+//   return totalPrice;
+// }
+// // Change code above this line
+
+// console.log(calculateTotalPrice([12, 85, 37, 4]));
+
+// Change code below this line
+// const calculateTotalPrice = (orderedItems) => {
+//   let totalPrice = 0;
+
+//   orderedItems.forEach((item) => (totalPrice += item));
+
+//   return totalPrice;
+// };
+// // Change code above this line
+
+// console.log(calculateTotalPrice([12, 85, 37, 4]));
+
+// Change code below this line
+// const filterArray = (numbers, value) => {
+//   const filteredNumbers = [];
+
+//   numbers.forEach((number) =>
+//     number > value ? filteredNumbers.push(number) : filteredNumbers
+//   );
+
+//   // Change code above this line
+//   return filteredNumbers;
+// };
+
+// console.log(filterArray([1, 2, 3, 4, 5], 3));
+
+// Change code below this line
+// const getCommonElements = (firstArray, secondArray) => {
+//   const commonElements = [];
+
+//   firstArray.forEach((element) =>
+//     secondArray.includes(element)
+//       ? commonElements.push(element)
+//       : commonElements
+//   );
+
+//   // Change code above this line
+//   return commonElements;
+// };
+
+// console.log(getCommonElements([1, 2, 3], [2, 4]));
+
+// function changeEven(numbers, value) {
+//   // Change code below this line
+//   const newChangedArray = [];
+
+//   const mapArray = numbers.map((number) =>
+//     number % 2 === 0 ? number + value : number
+//   );
+
+//   // numbers.forEach((element) =>
+//   //   element % 2 === 0
+//   //     ? newChangedArray.push(element + value)
+//   //     : newChangedArray.push(element)
+//   // );
+
+//   // for (let i = 0; i < numbers.length; i += 1) {
+//   //   if (numbers[i] % 2 === 0) {
+//   //     numbers[i] = numbers[i] + value;
+//   //   }
+//   // }
+
+//   return mapArray;
+//   return newChangedArray;
+//   // Change code above this line
+// }
+
+// console.log(changeEven([1, 2, 3, 4, 5], 10));
+
+const users = [
+  {
+    name: 'Moore Hensley',
+    email: 'moorehensley@indexia.com',
+    eyeColor: 'blue',
+    friends: ['Sharron Pace'],
+    isActive: false,
+    balance: 2811,
+    skills: ['ipsum', 'lorem'],
+    gender: 'male',
+    age: 37,
+  },
+  {
+    name: 'Sharlene Bush',
+    email: 'sharlenebush@tubesys.com',
+    eyeColor: 'blue',
+    friends: ['Briana Decker', 'Sharron Pace'],
+    isActive: true,
+    balance: 3821,
+    skills: ['tempor', 'mollit', 'commodo', 'veniam', 'laborum'],
+    gender: 'female',
+    age: 34,
+  },
+  {
+    name: 'Ross Vazquez',
+    email: 'rossvazquez@xinware.com',
+    eyeColor: 'green',
+    friends: ['Marilyn Mcintosh', 'Padilla Garrison', 'Naomi Buckner'],
+    isActive: false,
+    balance: 3793,
+    skills: ['nulla', 'anim', 'proident', 'ipsum', 'elit'],
+    gender: 'male',
+    age: 24,
+  },
+  {
+    name: 'Elma Head',
+    email: 'elmahead@omatom.com',
+    eyeColor: 'green',
+    friends: ['Goldie Gentry', 'Aisha Tran'],
+    isActive: true,
+    balance: 2278,
+    skills: ['adipisicing', 'irure', 'velit'],
+    gender: 'female',
+    age: 21,
+  },
+  {
+    name: 'Carey Barr',
+    email: 'careybarr@nurali.com',
+    eyeColor: 'blue',
+    friends: ['Jordan Sampson', 'Eddie Strong'],
+    isActive: true,
+    balance: 3951,
+    skills: ['ex', 'culpa', 'nostrud'],
+    gender: 'male',
+    age: 27,
+  },
+  {
+    name: 'Blackburn Dotson',
+    email: 'blackburndotson@furnigeer.com',
+    eyeColor: 'brown',
+    friends: ['Jacklyn Lucas', 'Linda Chapman'],
+    isActive: false,
+    balance: 1498,
+    skills: ['non', 'amet', 'ipsum'],
+    gender: 'male',
+    age: 38,
+  },
+  {
+    name: 'Sheree Anthony',
+    email: 'shereeanthony@kog.com',
+    eyeColor: 'brown',
+    friends: ['Goldie Gentry', 'Briana Decker'],
+    isActive: true,
+    balance: 2764,
+    skills: ['lorem', 'veniam', 'culpa'],
+    gender: 'female',
+    age: 39,
+  },
 ];
 
-const sortBy = _.sortBy(players, ['rank', 'isOnline']);
-
-console.table(sortBy);
+const getUserNames = users.flatMap((user) => user.name);
+console.log(getUserNames);
