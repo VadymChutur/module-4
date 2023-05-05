@@ -856,6 +856,112 @@ const user = {
 
 // console.log(totalAveragePlaytimePerGame);
 
+// const users = [
+//   {
+//     name: 'Moore Hensley',
+//     email: 'moorehensley@indexia.com',
+//     eyeColor: 'blue',
+//     friends: ['Sharron Pace'],
+//     isActive: false,
+//     balance: 2811,
+//     gender: 'male',
+//   },
+//   {
+//     name: 'Sharlene Bush',
+//     email: 'sharlenebush@tubesys.com',
+//     eyeColor: 'blue',
+//     friends: ['Briana Decker', 'Sharron Pace'],
+//     isActive: true,
+//     balance: 3821,
+//     gender: 'female',
+//   },
+//   {
+//     name: 'Ross Vazquez',
+//     email: 'rossvazquez@xinware.com',
+//     eyeColor: 'green',
+//     friends: ['Marilyn Mcintosh', 'Padilla Garrison', 'Naomi Buckner'],
+//     isActive: false,
+//     balance: 3793,
+//     gender: 'male',
+//   },
+//   {
+//     name: 'Elma Head',
+//     email: 'elmahead@omatom.com',
+//     eyeColor: 'green',
+//     friends: ['Goldie Gentry', 'Aisha Tran'],
+//     isActive: true,
+//     balance: 2278,
+//     gender: 'female',
+//   },
+//   {
+//     name: 'Carey Barr',
+//     email: 'careybarr@nurali.com',
+//     eyeColor: 'blue',
+//     friends: ['Jordan Sampson', 'Eddie Strong'],
+//     isActive: true,
+//     balance: 3951,
+//     gender: 'male',
+//   },
+//   {
+//     name: 'Blackburn Dotson',
+//     email: 'blackburndotson@furnigeer.com',
+//     eyeColor: 'brown',
+//     friends: ['Jacklyn Lucas', 'Linda Chapman'],
+//     isActive: false,
+//     balance: 1498,
+//     gender: 'male',
+//   },
+//   {
+//     name: 'Sheree Anthony',
+//     email: 'shereeanthony@kog.com',
+//     eyeColor: 'brown',
+//     friends: ['Goldie Gentry', 'Briana Decker'],
+//     isActive: true,
+//     balance: 2764,
+//     gender: 'female',
+//   },
+// ];
+
+// // Change code below this line
+// const getTotalFriendCount = (users) =>
+//   users.reduce((totalFriends, user) => totalFriends + user.friends.length, 0);
+// // Change code above this line
+
+// console.log(getTotalFriendCount(users));
+
+// const books = [
+//   {
+//     title: 'The Last Kingdom',
+//     author: 'Bernard Cornwell',
+//     rating: 8.38,
+//   },
+//   {
+//     title: 'Beside Still Waters',
+//     author: 'Robert Sheckley',
+//     rating: 8.51,
+//   },
+//   {
+//     title: 'The Dream of a Ridiculous Man',
+//     author: 'Fyodor Dostoevsky',
+//     rating: 7.75,
+//   },
+//   { title: 'Redder Than Blood', author: 'Tanith Lee', rating: 7.94 },
+//   {
+//     title: 'The Dreams in the Witch House',
+//     author: 'Howard Lovecraft',
+//     rating: 8.67,
+//   },
+// ];
+// const MIN_BOOK_RATING = 8;
+// // Change code below this line
+
+// const names = books
+//   .filter((book) => book.rating > MIN_BOOK_RATING)
+//   .map(({ author }) => author)
+//   .sort((firstAuthor, secondAuthor) => firstAuthor.localeCompare(secondAuthor));
+
+// console.log(names);
+
 const users = [
   {
     name: 'Moore Hensley',
@@ -897,7 +1003,7 @@ const users = [
     name: 'Carey Barr',
     email: 'careybarr@nurali.com',
     eyeColor: 'blue',
-    friends: ['Jordan Sampson', 'Eddie Strong'],
+    friends: ['Jordan Sampson', 'Eddie Strong', 'Adrian Cross'],
     isActive: true,
     balance: 3951,
     gender: 'male',
@@ -906,7 +1012,12 @@ const users = [
     name: 'Blackburn Dotson',
     email: 'blackburndotson@furnigeer.com',
     eyeColor: 'brown',
-    friends: ['Jacklyn Lucas', 'Linda Chapman'],
+    friends: [
+      'Jacklyn Lucas',
+      'Linda Chapman',
+      'Adrian Cross',
+      'Solomon Fokes',
+    ],
     isActive: false,
     balance: 1498,
     gender: 'male',
@@ -922,9 +1033,37 @@ const users = [
   },
 ];
 
+// // Change code below this line
+// const getNamesSortedByFriendCount = (users) => {
+//   return [...users]
+//     .sort(
+//       (firstName, secondName) =>
+//         firstName.friends.length - secondName.friends.length
+//     )
+//     .map(({ name }) => name);
+// };
+// // Change code above this line
+
+// console.log(getNamesSortedByFriendCount(users));
+
+// // Change code below this line
+// const getSortedFriends = (users) => {
+//   return users
+//     .flatMap(({ friends }) => friends)
+//     .filter((name, index, array) => array.indexOf(name) === index)
+//     .sort((firstName, secondName) => firstName.localeCompare(secondName));
+// };
+// // Change code above this line
+
+// console.log(getSortedFriends(users));
+
 // Change code below this line
-const getTotalFriendCount = (users) =>
-  users.reduce((totalFriends, user) => totalFriends + user.friends.length, 0);
+const getTotalBalanceByGender = (users, gender) => {
+  return users
+    .filter((user) => user.gender === gender)
+    .map(({ balance }) => balance)
+    .reduce((totalBalance, value) => totalBalance + value, 0);
+};
 // Change code above this line
 
-console.log(getTotalFriendCount(users));
+console.log(getTotalBalanceByGender(users, 'female'));
